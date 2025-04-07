@@ -436,7 +436,7 @@
           </div>
           <div class="tag-line" style="text-align: center; text-transform:uppercase; font-family: Courier, monospace;
           "><h2><i>Devoted to Innovative Excellence</i></h2></div>
-          <footer style="font-size:small;color:grey">&COPY;2025 BHAVIKA GIYANANI. ALL RIGHT RESERVED. </footer>
+          <footer style="font-size:small;color:grey" id="copyright">&COPY;2025 BHAVIKA GIYANANI. ALL RIGHT RESERVED. </footer>
           </div>
         </footer>
      
@@ -449,5 +449,11 @@
     <script src="https://unpkg.com/tippy.js@6"></script> <!--tippy-->
     <script src="portfolio.js" type="module"></script><!--portfolio-->
     <script src="portfolio_gsap.js" type="module"></script><!--portfolio-->
+  <script>
+    const date = new Date()
+    const year = date.getFullYear()
+    const copyright_line = document.getElementById("copyright")
+    copyright_line.innerHTML=`&copy;${year} BHAVIKA GIYANANI. ALL RIGHT RESERVED.`
+  </script>
   </body>
 </html>
