@@ -76,7 +76,7 @@ linkedinDiv.addEventListener("click", function () {
 
 resume.addEventListener("click", () => {
   window.open(
-    "https://drive.google.com/file/d/12eIEX_XzOVUQbuzuS9Ran-LwHPS9TXnv/view?usp=sharing",
+    "https://drive.google.com/file/d/1JRUPfM70-2keMyLSKjd6ByxP5bB0RL8W/view?usp=sharing",
     "_blank"
   );
 });
@@ -153,6 +153,12 @@ tippy(".git-link", {
 });
 tippy(".demo-link", {
   content: "View Demo",
+  placement: "top",
+  arrow: true,
+  animation: "fade",
+});
+tippy(".live-link", {
+  content: "View Live",
   placement: "top",
   arrow: true,
   animation: "fade",
