@@ -76,7 +76,7 @@ linkedinDiv.addEventListener("click", function () {
 
 resume.addEventListener("click", () => {
   window.open(
-    "https://drive.google.com/file/d/1JRUPfM70-2keMyLSKjd6ByxP5bB0RL8W/view?usp=sharing",
+    "https://drive.google.com/file/d/1N-CcPldh_txmmpXfT9594DkboAfF411o/view?usp=sharing",
     "_blank"
   );
 });
