@@ -32,15 +32,15 @@ emailLinkDiv.addEventListener("click", function () {
 //^ Phone Link Tree
 if (window.innerWidth < 769) {
   phoneLinkDiv.addEventListener("click", function () {
-    window.location.href = "tel:+919723130460";
+    window.location.href = "tel:+919227022029";
   });
 } else {
   tippy("#link-tree-phone", {
-    content: "Please Dial +91 9723130460 on phone",
+    content: "Please Dial +91 9227022029 on phone",
     placement: "top",
   });
   phoneLinkDiv.addEventListener("click", function () {
-    alert("Please dial this number on phone: +91 9723130460");
+    alert("Please dial this number on phone: +91 9227022029");
   });
 }
 
@@ -56,15 +56,15 @@ const phoneDiv = document.querySelector("#phone");
 
 if (window.innerWidth < 769) {
   phoneDiv.addEventListener("click", function () {
-    window.location.href = "tel:+919723130460";
+    window.location.href = "tel:+919227022029";
   });
 } else {
   tippy("#phone", {
-    content: "Please Dial +91 9723130460 on phone",
+    content: "Please Dial +91 9227022029 on phone",
     placement: "top",
   });
   phoneDiv.addEventListener("click", function () {
-    alert("Please dial this number on phone: +91 9723130460");
+    alert("Please dial this number on phone: +91 9227022029");
   });
 }
 
@@ -76,7 +76,7 @@ linkedinDiv.addEventListener("click", function () {
 
 resume.addEventListener("click", () => {
   window.open(
-    "https://drive.google.com/file/d/1N-CcPldh_txmmpXfT9594DkboAfF411o/view?usp=sharing",
+    "https://drive.google.com/file/d/1YY2vGV9c6X3CmHBDZkzIUs3wSkZnD2nz/view?usp=sharing",
     "_blank"
   );
 });
