@@ -25,7 +25,7 @@ const linkedinLinkDiv = document.querySelector("#link-tree-linkedin");
 //^ Email Link Tree
 emailLinkDiv.addEventListener("click", function () {
   window.open(
-    "https://mail.google.com/mail/?view=cm&fs=1&to=bhavikavgiyanani@gmail.com&"
+    "https://mail.google.com/mail/?view=cm&fs=1&to=bhavikavgiyanani@gmail.com&",
   );
 });
 
@@ -76,8 +76,8 @@ linkedinDiv.addEventListener("click", function () {
 
 resume.addEventListener("click", () => {
   window.open(
-    "https://drive.google.com/file/d/1YY2vGV9c6X3CmHBDZkzIUs3wSkZnD2nz/view?usp=sharing",
-    "_blank"
+    "https://drive.google.com/file/d/1wh-jukT7BSkoF1BPFUmE5Xskmq2jUgTE/view?usp=sharing",
+    "_blank",
   );
 });
 
@@ -183,7 +183,7 @@ if (window.innerWidth < 768) {
   emailDiv.addEventListener("click", function () {
     window.open(
       "https://mail.google.com/mail/?view=cm&fs=1&to=bhavikavgiyanani@gmail.com&",
-      "_blank"
+      "_blank",
     );
   });
 }
