@@ -160,6 +160,10 @@ body {
   background-image: url("./transitops/logo.svg");
 }
 
+.container .card .face.face1 .project3-logo-img + h3 {
+  margin-top: 1rem;
+}
+
 .container .card .face.face1 .project2-logo-img {
   background-position: center;
   background-size: contain;
