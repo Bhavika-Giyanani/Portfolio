@@ -92,6 +92,8 @@
 }
 .link-box .contact-grid {
   display: flex;
+  width: calc(100% - 4rem);
+  min-width: 0;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -120,6 +122,8 @@
   }
 }
 .link-box .exit {
+  position: absolute;
+  right: 1rem;
   border: 1px solid;
   border-radius: 5px;
   width: 30px;

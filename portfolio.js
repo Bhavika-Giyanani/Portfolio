@@ -21,6 +21,8 @@ exit.addEventListener("click", () => {
 const emailLinkDiv = document.querySelector("#link-tree-email");
 const phoneLinkDiv = document.querySelector("#link-tree-phone");
 const linkedinLinkDiv = document.querySelector("#link-tree-linkedin");
+const githubLinkDiv = document.querySelector("#link-tree-github");
+const leetcodeLinkDiv = document.querySelector("#link-tree-leetcode");
 
 //^ Email Link Tree
 emailLinkDiv.addEventListener("click", function () {
@@ -49,6 +51,14 @@ linkedinLinkDiv.addEventListener("click", function () {
   window.open("https://www.linkedin.com/in/bhavika-giyanani", "_blank");
 });
 
+githubLinkDiv.addEventListener("click", function () {
+  window.open("https://github.com/Bhavika-Giyanani", "_blank");
+});
+
+leetcodeLinkDiv.addEventListener("click", function () {
+  window.open("https://leetcode.com/u/Bhavika-Giyanani/", "_blank");
+});
+
 //^ Contact Page5 (footer)
 const emailDiv = document.querySelector("#email");
 
@@ -72,6 +82,18 @@ const linkedinDiv = document.querySelector("#linkedIn");
 
 linkedinDiv.addEventListener("click", function () {
   window.open("https://www.linkedin.com/in/bhavika-giyanani", "_blank");
+});
+
+const githubDiv = document.querySelector("#github");
+
+githubDiv.addEventListener("click", function () {
+  window.open("https://github.com/Bhavika-Giyanani", "_blank");
+});
+
+const leetcodeDiv = document.querySelector("#leetcode");
+
+leetcodeDiv.addEventListener("click", function () {
+  window.open("https://leetcode.com/u/Bhavika-Giyanani/", "_blank");
 });
 
 resume.addEventListener("click", () => {
