@@ -114,8 +114,9 @@ body {
 }
 
 .container .card .face.face1 .content h3 {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
   /* font-size: clamp(1.1rem, 2.5vw, 1.5rem); */
   font-size: 1.3rem;
   color: white;
@@ -156,7 +157,7 @@ body {
 }
 
 .container .card .face.face1 .project3-logo-img {
-  background-image: url("./luna-ai-chatbot/logo.png");
+  background-image: url("./transitops/logo.svg");
 }
 
 .container .card .face.face1 .project2-logo-img {
@@ -249,7 +250,8 @@ body {
   .project-link-tree
   .project-link-tree-right-cont
   .git-link,
-.demo-link, .live-link {
+.demo-link,
+.live-link {
   border-radius: 5px;
   padding: 0.3rem;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
@@ -266,8 +268,9 @@ body {
   vertical-align: middle;
 }
 .container .card .face.face2 .content {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
   width: 100%;
 }
 .container .card .face.face2 .content p,
