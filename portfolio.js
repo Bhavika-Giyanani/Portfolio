@@ -98,7 +98,7 @@ leetcodeDiv.addEventListener("click", function () {
 
 resume.addEventListener("click", () => {
   window.open(
-    "https://drive.google.com/file/d/1wh-jukT7BSkoF1BPFUmE5Xskmq2jUgTE/view?usp=sharing",
+    "https://drive.google.com/file/d/1-dIHT8pDMrpkieqqmONmrvjs7gITbiz0/view?usp=drive_link",
     "_blank",
   );
 });
