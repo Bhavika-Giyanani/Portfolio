@@ -136,7 +136,7 @@ body {
   }
 }
 
-.container .card .face.face1 .project1-logo-img,
+.container .card .face.face1 .notesgraph-logo-img,
 .container .card .face.face1 .project3-logo-img,
 .container .card .face.face1 .project4-logo-img {
   background-position: center;
@@ -152,8 +152,8 @@ body {
   padding-top: 2rem;
 }
 
-.container .card .face.face1 .project1-logo-img {
-  background-image: url("./space_invader/rocket.png");
+.container .card .face.face1 .notesgraph-logo-img {
+  background-image: url("./notesgraph_ai/notesgraph.svg");
 }
 
 .container .card .face.face1 .project3-logo-img {
