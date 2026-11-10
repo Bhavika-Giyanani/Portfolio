@@ -350,12 +350,14 @@ ul {
 .page2 {
   position: relative;
   height: auto;
+  padding-block: clamp(2rem, 4vh, 3.5rem);
   background-color: black;
   border-top-left-radius: 3%;
   border-top-right-radius: 3%;
   z-index: 3;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  column-gap: 0;
   align-items: center;
   flex-wrap: wrap;
   color: white;
@@ -370,9 +372,7 @@ ul {
   /* padding: 65px; */
   /*^ padding clamp */
   /* padding-top: clamp(3.125rem, 2.6078rem + 2.5862vw, 4.0625rem); */
-  padding: clamp(1.25rem, 0.2155rem + 5.1724vw, 3.125rem);
-  padding-top: 70px;
-  padding-bottom: 45px;
+  padding: 0 clamp(1.25rem, 0.2155rem + 5.1724vw, 3.125rem);
   text-align: left;
   /* width: 30%; */
   /* border:2px solid gold; */
@@ -383,14 +383,14 @@ ul {
   /* display: flex;
   align-items: center;
   justify-content: center; */
-  overflow: hidden;
+  overflow: visible;
   color: white;
   flex: 2;
-  padding: 50px;
-  /*^ padding clamp */
-  padding: clamp(1.25rem, 0.2155rem + 5.1724vw, 3.125rem);
+  padding: 0 clamp(1.25rem, 0.2155rem + 5.1724vw, 3.125rem);
   /* width: 55%; */
-  height: 80vh;
+  min-height: 0;
+  height: auto;
+  box-sizing: border-box;
   text-align: left;
   /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -402,10 +402,21 @@ ul {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  justify-content: center;
+  justify-content: flex-start;
   /*^ font-size clamp */
   font-size: clamp(1.3rem, 0.969rem + 1.6552vw, 1.9rem);
   /* border:2px solid gold */
+}
+
+.page2 .about-content .content-para {
+  font-family: "Merienda", cursive;
+  font-size: clamp(0.85rem, 1.1vw + 0.45rem, 1.15rem);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.page2 .about h1 {
+  margin: 0;
 }
 
 .page2 .about-content .status p {
@@ -413,6 +424,15 @@ ul {
   font-size: small;
   text-transform: uppercase;
   text-align: left;
+  margin: 0;
+}
+
+.page2 .about-content .status > p {
+  margin-bottom: 0.5rem;
+}
+
+.page2 .about-content .status {
+  margin-top: clamp(1.25rem, 2vw, 2rem);
 }
 .page2 .about-content .status .ms_logo {
   display: flex;
@@ -424,18 +444,11 @@ ul {
 }
 
 .page2 .about-content .status .ms_logo {
-  padding-top: 20px;
+  padding-top: 0;
 }
 
-/* .page2 .pg2padding{
-  background-color: black;
-  width:auto;
-  height: 90vh;
-} */
-@media screen and (min-width: 2561px) {
-  .page2 {
-    height: 95vh;
-  }
+.page2 .pg2padding {
+  display: none;
 }
 @media screen and (max-width: 767px) {
   .page2 {
@@ -443,11 +456,22 @@ ul {
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 767px) {
   .page2 {
     flex-direction: column;
+    align-items: stretch;
     text-align: justify;
   }
+
+  .page2 .about,
+  .page2 .about-content {
+    flex: 0 0 auto;
+  }
+
+  .page2 .about {
+    margin-bottom: 2rem;
+  }
+
   .about,
   .about-content {
     margin: 0;
@@ -462,12 +486,25 @@ ul {
   .about-content {
     font-size: 0.5vw;
   }
-  .pg2padding {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    background-color: black;
-    width: 20vw;
-    height: 20vh;
+
+  .page2 .about-content {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding: 0 clamp(1.25rem, 5vw, 2rem);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .page2 .about-content .content-para {
+    font-size: clamp(0.85rem, 2.8vw, 1rem);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+
+  .page2 .about-content .status {
+    margin-top: 1.5rem;
   }
 }
 
