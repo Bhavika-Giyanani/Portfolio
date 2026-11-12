@@ -1,34 +1,63 @@
 gsap.registerPlugin(ScrollTrigger);
 
-//^ page2
-gsap.from(".page2 .about h1 span", {
-  y: 40,
-  opacity: 0,
-  duration: 1.5,
-  ease: "power3.out",
-  stagger: 0.2,
-  scrollTrigger: {
-    trigger: ".page2 .about h1",
-    scroller: ".sticky-transition-wrapper",
-    start: "top 80%",
-    end: "top 20%",
-    toggleActions: "play none none reset",
-  },
-});
+//^ page2 (About)
+// The page scrolls inside .sticky-transition-wrapper, so every trigger uses it as the scroller.
+const aboutPoem = document.querySelector(".page2 .ab-poem");
+const aboutPlacard = document.querySelector(".page2 .ab-placard");
+const aboutLetters = document.querySelectorAll(".page2 .ab-title span");
+const aboutLines = document.querySelectorAll(".page2 .ab-line");
 
-gsap.from(".page2 .about-content", {
-  x: 500,
-  opacity: 0,
-  duration: 1.5,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: ".page2 .about-content",
-    scroller: ".sticky-transition-wrapper",
-    start: "top 80%",
-    end: "top 20%",
-    toggleActions: "play none none reset",
-  },
-});
+if (aboutPoem && aboutPlacard && aboutLetters.length && aboutLines.length) {
+  // Animations only run when the visitor hasn't asked for reduced motion;
+  // otherwise the poem is simply visible (CSS default).
+  gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
+    // Heading: same entrance as the Projects and Skills headings
+    gsap.from(aboutLetters, {
+      y: 40,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power3.out",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".page2 .ab-title",
+        scroller: ".sticky-transition-wrapper",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none none reset",
+      },
+    });
+
+    // The poem "reads in" line by line as you scroll,
+    // then the education placard resolves once you reach the last line.
+    gsap.set(aboutLines, { opacity: 0.18 });
+    gsap.set(aboutPlacard, { opacity: 0.35 });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: aboutPoem,
+          scroller: ".sticky-transition-wrapper",
+          start: "top 75%",
+          end: "bottom 45%",
+          scrub: 0.6,
+        },
+      })
+      .to(aboutLines, {
+        opacity: 1,
+        ease: "none",
+        stagger: 0.25,
+        duration: 0.5,
+      })
+      .to(
+        aboutPlacard,
+        { opacity: 1, ease: "power2.out", duration: 1.5 },
+        ">-0.5",
+      );
+  });
+
+  // Google Fonts (Cinzel, Merienda) change text height after load, so re-measure
+  document.fonts?.ready.then(() => ScrollTrigger.refresh());
+}
 
 //^ page3 - Enhanced Animations
 
@@ -168,7 +197,7 @@ gsap.utils.toArray(".page3 .container .card").forEach((card, index) => {
             duration: 0.4,
             ease: "power2.out",
           },
-          0.2
+          0.2,
         );
       }
 
@@ -181,7 +210,7 @@ gsap.utils.toArray(".page3 .container .card").forEach((card, index) => {
             duration: 0.4,
             ease: "power2.out",
           },
-          0.3
+          0.3,
         );
 
         const links = linksContainer.querySelectorAll("a");
@@ -194,7 +223,7 @@ gsap.utils.toArray(".page3 .container .card").forEach((card, index) => {
             ease: "back.out(1.7)",
             stagger: 0.1,
           },
-          0.4
+          0.4,
         );
       }
     });

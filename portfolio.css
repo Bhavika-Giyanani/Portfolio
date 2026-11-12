@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -52,12 +52,8 @@
   z-index: 1;
   background-color: #ebebeb;
   background-size: 6px 6px;
-  background-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.1),
-      1px,
-      transparent 1px
-    ),
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.1), 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.1), 1px, transparent 1px);
   display: flex;
   flex-direction: column;
@@ -335,8 +331,9 @@ ul {
   transform: rotate(-180deg);
   color: white;
   text-align: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
 }
 
 @media screen and (max-width: 920px) {
@@ -345,166 +342,145 @@ ul {
   }
 }
 
-/*^ Page 2 CSS */
+/*^ Page 2 CSS (About) */
 
 .page2 {
   position: relative;
   height: auto;
-  padding-block: clamp(2rem, 4vh, 3.5rem);
   background-color: black;
   border-top-left-radius: 3%;
   border-top-right-radius: 3%;
   z-index: 3;
   display: flex;
   justify-content: center;
-  column-gap: 0;
-  align-items: center;
-  flex-wrap: wrap;
   color: white;
 }
 
-.page2 .about {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  color: white;
-  flex: 1;
-  /* padding: 65px; */
-  /*^ padding clamp */
-  /* padding-top: clamp(3.125rem, 2.6078rem + 2.5862vw, 4.0625rem); */
-  padding: 0 clamp(1.25rem, 0.2155rem + 5.1724vw, 3.125rem);
-  text-align: left;
-  /* width: 30%; */
-  /* border:2px solid gold; */
-  font-size: clamp(2.5rem, 2.3214rem + 0.8929vw, 3.125rem);
+.page2 .ab {
+  width: min(1100px, 100% - 3rem);
+  padding-block: clamp(4rem, 12vh, 8rem);
 }
 
-.page2 .about-content {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  overflow: visible;
-  color: white;
-  flex: 2;
-  padding: 0 clamp(1.25rem, 0.2155rem + 5.1724vw, 3.125rem);
-  /* width: 55%; */
-  min-height: 0;
-  height: auto;
-  box-sizing: border-box;
-  text-align: left;
-  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  line-height: 2.5rem;
-  /*^ Line height clamp */
-  line-height: clamp(2rem, 1.7241rem + 1.3793vw, 2.5rem);
-  font-size: 1.9rem;
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  justify-content: flex-start;
-  /*^ font-size clamp */
-  font-size: clamp(1.3rem, 0.969rem + 1.6552vw, 1.9rem);
-  /* border:2px solid gold */
+/* Same size scale as the Projects and Skills headings */
+.page2 .ab-title {
+  margin: 0 0 clamp(2rem, 6vh, 4rem);
+  font-size: clamp(4rem, 3.2857rem + 3.5714vw, 6.5rem);
+  line-height: 1.05;
+}
+.page2 .ab-title span {
+  display: inline-block;
 }
 
-.page2 .about-content .content-para {
+/* Two columns: the poem (wide) + the education placard (narrow, stays in view) */
+.page2 .ab-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+/* The poem: one poetic line per row, wrapped lines hang under the first */
+.page2 .ab-poem {
   font-family: "Merienda", cursive;
-  font-size: clamp(0.85rem, 1.1vw + 0.45rem, 1.15rem);
-  line-height: 1.6;
+  font-size: clamp(1.05rem, 0.85rem + 0.9vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.75;
+}
+.page2 .ab-stanza {
   margin: 0;
 }
-
-.page2 .about h1 {
-  margin: 0;
+.page2 .ab-stanza + .ab-stanza {
+  margin-top: 1.6em;
+}
+.page2 .ab-line {
+  display: block;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+/* The closing couplet is the signature line */
+.page2 .ab-stanza:last-child {
+  margin-top: 2.2em;
+  font-size: 1.1em;
+  font-weight: 700;
 }
 
-.page2 .about-content .status p {
-  line-height: 1.3rem;
-  font-size: small;
-  text-transform: uppercase;
-  text-align: left;
-  margin: 0;
+/* Education placard, like a wall label beside a painting */
+.page2 .ab-placard {
+  position: sticky;
+  top: clamp(1.5rem, 8vh, 5rem);
+  align-self: start;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  border-radius: 4px;
 }
-
-.page2 .about-content .status > p {
-  margin-bottom: 0.5rem;
-}
-
-.page2 .about-content .status {
-  margin-top: clamp(1.25rem, 2vw, 2rem);
-}
-.page2 .about-content .status .ms_logo {
-  display: flex;
-  gap: 10px;
-}
-.page2 .about-content .status .ms_logo img {
+.page2 .ab-logo {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 0.75rem;
   border-radius: 10%;
   object-fit: contain;
 }
-
-.page2 .about-content .status .ms_logo {
-  padding-top: 0;
+.page2 .ab-status,
+.page2 .ab-years {
+  margin: 0;
+  font-family: "Nunito", system-ui, sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.72;
+}
+.page2 .ab-years {
+  margin-top: 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+.page2 .ab-degree {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+.page2 .ab-school {
+  margin: 0;
+  font-family: "Nunito", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
-.page2 .pg2padding {
-  display: none;
+/* Link to the next section */
+.page2 .ab-cta {
+  display: inline-block;
+  margin-top: clamp(2rem, 5vh, 3.5rem);
+  padding-block: 0.35rem;
+  color: inherit;
+  font-family: "Nunito", system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px
+    no-repeat;
+  transition: background-size 0.3s ease;
+}
+.page2 .ab-cta:hover {
+  background-size: 100% 3px;
+}
+.page2 .ab-cta:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media screen and (max-width: 860px) {
+  .page2 .ab-body {
+    grid-template-columns: 1fr;
+  }
+  .page2 .ab-placard {
+    position: static;
+  }
 }
 @media screen and (max-width: 767px) {
   .page2 {
     border-radius: 0;
-  }
-}
-
-@media (max-width: 767px) {
-  .page2 {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: justify;
-  }
-
-  .page2 .about,
-  .page2 .about-content {
-    flex: 0 0 auto;
-  }
-
-  .page2 .about {
-    margin-bottom: 2rem;
-  }
-
-  .about,
-  .about-content {
-    margin: 0;
-    padding: 10px 0;
-    font-size: 1rem;
-    line-height: 10vw;
-    width: 100%;
-    text-align: justify;
-    box-sizing: border-box;
-  }
-
-  .about-content {
-    font-size: 0.5vw;
-  }
-
-  .page2 .about-content {
-    height: auto;
-    min-height: 0;
-    overflow: visible;
-    padding: 0 clamp(1.25rem, 5vw, 2rem);
-    font-size: 1rem;
-    line-height: 1.6;
-    text-align: left;
-  }
-
-  .page2 .about-content .content-para {
-    font-size: clamp(0.85rem, 2.8vw, 1rem);
-    line-height: 1.6;
-    overflow-wrap: anywhere;
-  }
-
-  .page2 .about-content .status {
-    margin-top: 1.5rem;
   }
 }
 
@@ -561,8 +537,9 @@ ul {
   font-size: 6rem;
   font-size: clamp(4rem, 3.2857rem + 3.5714vw, 6.5rem);
   /* font-size: clamp(2rem, 1.4783rem + 2.6087vw, 8rem); */
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
   font-family: "Cinzel", serif;
 }
 
@@ -596,8 +573,9 @@ ul {
 .skill-item p {
   display: none;
   opacity: 0;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
   padding-bottom: 1rem;
 }
 
