@@ -478,6 +478,24 @@ ul {
     position: static;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .page2 .ab {
+    text-align: center;
+  }
+  .page2 .ab-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .page2 .ab-line {
+    padding-left: 0;
+    text-indent: 0;
+  }
+  .page2 .ab-placard {
+    justify-items: center;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+}
 @media screen and (max-width: 767px) {
   .page2 {
     border-radius: 0;
