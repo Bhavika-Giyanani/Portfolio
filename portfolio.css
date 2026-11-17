@@ -371,7 +371,7 @@ ul {
   display: inline-block;
 }
 
-/* Two columns: the poem (wide) + the education placard (narrow, stays in view) */
+/* Two columns: the poem (wide) + the sticky stats and education cards */
 .page2 .ab-body {
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
@@ -404,17 +404,35 @@ ul {
   font-weight: 700;
 }
 
-/* Education placard, like a wall label beside a painting */
-.page2 .ab-placard {
+/* Keep both cards together in view while the poem scrolls */
+.page2 .ab-sidebar {
   position: sticky;
   top: clamp(1.5rem, 8vh, 5rem);
   align-self: start;
+  display: grid;
+  gap: clamp(1.25rem, 3vh, 2rem);
+}
+.page2 .ab-leetcode-card,
+.page2 .ab-placard {
   display: grid;
   gap: 0.5rem;
   justify-items: start;
   padding: clamp(1.25rem, 2.5vw, 1.75rem);
   border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
   border-radius: 4px;
+}
+.page2 .ab-leetcode-card {
+  color: inherit;
+  text-decoration: none;
+}
+.page2 .ab-leetcode-card:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+.page2 .ab-leetcode-stats {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .page2 .ab-logo {
   width: 56px;
@@ -474,26 +492,36 @@ ul {
   .page2 .ab-body {
     grid-template-columns: 1fr;
   }
-  .page2 .ab-placard {
+  .page2 .ab-sidebar {
     position: static;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 560px) and (max-width: 1200px) {
   .page2 .ab {
     text-align: center;
-  }
-  .page2 .ab-body {
-    grid-template-columns: minmax(0, 1fr);
   }
   .page2 .ab-line {
     padding-left: 0;
     text-indent: 0;
   }
-  .page2 .ab-placard {
+  .page2 .ab-placard,
+  .page2 .ab-leetcode-card {
     justify-items: center;
-    width: fit-content;
-    max-width: 100%;
-    margin-inline: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .page2 .ab-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .page2 .ab-sidebar {
+    width: min(100%, 32rem);
+    justify-self: center;
+  }
+}
+@media screen and (max-width: 559.98px) {
+  .page2 .ab-line {
+    padding-left: 0;
+    text-indent: 0;
   }
 }
 @media screen and (max-width: 767px) {
